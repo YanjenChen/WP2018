@@ -417,3 +417,6 @@ header, body, footer {
 .size-100 {
   flex: 100%;
   width: 100%; }
+
+.text-center {
+  text-align: center; }
