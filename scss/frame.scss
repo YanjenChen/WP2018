@@ -1,0 +1,26 @@
+header, body, footer {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 960px;
+}
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+.block {
+    flex: 1;
+}
+@for $i from 1 through 100 {
+    .size-#{$i} {
+        flex: 1%*$i;
+        width: 1%*$i;
+    }
+}
