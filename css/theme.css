@@ -43,7 +43,15 @@ header .chen {
   stroke-width: 0; }
 
 header #logo path {
-  animation: logo 5s linear 1; }
+  transition: 1s;
+  animation: logo 3s linear 1;
+  animation-play-state: running; }
+
+header #logo:hover path {
+  stroke-width: 1pt;
+  stroke-dashoffset: 0;
+  fill-opacity: 0;
+  animation-play-state: paused; }
 
 header h1 {
   font-size: 2.5rem;
@@ -128,3 +136,15 @@ header h1 {
     stroke-dashoffset: 565.2; }
   100% {
     stroke-dashoffset: 423.9; } }
+
+.interest-wrapper .interest-collection-wrapper {
+  overflow: hidden;
+  border: 10px solid #fdfffc; }
+
+.interest-wrapper .interest-collection {
+  display: flex; }
+  .interest-wrapper .interest-collection img {
+    margin: 15px 50px;
+    display: inline-block;
+    max-width: 100px;
+    max-height: 100px; }

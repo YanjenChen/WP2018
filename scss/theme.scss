@@ -29,8 +29,18 @@ header, section {
 header {
     .yanjen{fill:#F71735;stroke:#F71735;stroke-miterlimit:10;stroke-dasharray:1200 1000;stroke-width:0;}
     .chen{fill:#41EAD4;stroke:#41EAD4;stroke-miterlimit:10;stroke-dasharray:1200 1000;stroke-width:0;}
-    #logo path {
-        animation: logo 5s linear 1;
+    #logo {
+        path {
+            transition: 1s;
+            animation: logo 3s linear 1;
+            animation-play-state: running;
+        }
+        &:hover path {
+            stroke-width: 1pt;
+            stroke-dashoffset: 0;
+            fill-opacity: 0;
+            animation-play-state: paused;
+        }
     }
     h1 {
         font-size: 2.5rem;
@@ -116,6 +126,22 @@ header {
         @keyframes show25 {
             0% {stroke-dashoffset: 2*90*3.14;}
             100% {stroke-dashoffset: 2*90*3.14*0.75;}
+        }
+    }
+}
+.interest-wrapper {
+    .interest-collection-wrapper {
+        overflow: hidden;
+        border: 10px solid $baby-powder;
+    }
+    .interest-collection {
+        display: flex;
+
+        img {
+            margin: 15px 50px;
+            display: inline-block;
+            max-width: 100px;
+            max-height: 100px;
         }
     }
 }
