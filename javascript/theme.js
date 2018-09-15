@@ -1,51 +1,90 @@
 $(function() {
-    var supportedFlag = $.keyframe.isSupported();
+    var slider = $('.interest-collection');
+    var positions = initSlider(slider),
+        lenth = positions.lenth,
+        first = positions.first,
+        second = positions.second,
+        third = positions.third,
+        third_last = positions.third_last,
+        second_last = positions.second_last,
+        last = positions.last;
 
-    initSlider();
+    slider.find('.collection-items').click(function() {
+        var target_position = $(this).attr('item-id');
+        var current_position = slider.find('.activated').attr('item-id');
+        slider.find('.activated').toggleClass('activated');
+        // Swap to real item position
+        switch (target_position) {
+            case 'c1':
+            case 'c2':
+            case 'c' + second_last.attr('item-id'):
+            case 'c' + last.attr('item-id'):
+                slider.css('transform', 'translateX(' + getSlideDistance(slider, slider.find("[item-id='c" + current_position + "']")).toString() + 'px)');
+                animateSlider(slider, getSlideDistance(slider, slider.find("[item-id='" + target_position.replace('c', '') + "']")));
+                slider.find("[item-id='" + target_position.replace('c', '') + "']").toggleClass('activated');
+                break;
+            default:
+                animateSlider(slider, getSlideDistance(slider, $(this)));
+                $(this).toggleClass('activated');
+        }
+    });
 });
 
-function initSlider() {
-    var collection = $('.interest-collection'),
-        items = collection.find('img'),
+function initSlider(selector) {
+    var collection = selector,
+        items = collection.find('.collection-items'),
         lenth = items.length,
         first = items.filter(':first'),
         second = items.filter(':nth-child(2)'),
+        third = items.filter(':nth-child(3)'),
+        third_last = items.filter(':nth-child(' + (lenth - 2).toString() + ')'),
         second_last = items.filter(':nth-child(' + (lenth - 1).toString() + ')'),
         last = items.filter(':last');
 
-    // Copy last 2 items to the front
-    second_last.clone().attr('item-id', 'c_second_last').insertBefore(first);
-    last.clone().attr('item-id', 'c_last').insertBefore(first);
-    // Copy first 2 items to the end
-    second.clone().attr('item-id', 'c_second').insertAfter(last);
-    first.clone().attr('item-id', 'c_first').insertAfter(last);
+    // Copy last 3 items to the front
+    third_last.clone().attr('item-id', 'c' + third_last.attr('item-id')).insertBefore(first);
+    second_last.clone().attr('item-id', 'c' + second_last.attr('item-id')).insertBefore(first);
+    last.clone().attr('item-id', 'c' + last.attr('item-id')).insertBefore(first);
+    // Copy first 3 items to the end
+    third.clone().attr('item-id', 'c' + third.attr('item-id')).insertAfter(last);
+    second.clone().attr('item-id', 'c' + second.attr('item-id')).insertAfter(last);
+    first.clone().attr('item-id', 'c' + first.attr('item-id')).insertAfter(last);
     // Center first item to middle of mask
-    console.log(first.position().left);
-    console.log(first.outerWidth(true));
-    console.log(collection.width());
-    animateSlider(collection, 0);
+    var distance = getSlideDistance(collection, first);
+    first.toggleClass('activated');
+    animateSlider(collection, distance);
+
+    return {
+        lenth: lenth,
+        first: first,
+        second: second,
+        third: third,
+        third_last: third_last,
+        second_last: second_last,
+        last: last
+    };
+};
+
+function getSlideDistance(slider, item) {
+    return (slider.width() - 2 * item.position().left - item.outerWidth(true)) / 2;
 };
 
 function animateSlider(selector, distance) {
+    var posx = getPosx(selector);
+
+    $(selector).animate({
+        'margin-left': (distance - posx).toString()
+    }, function() {
+        $(this).css('transform', 'translateX(' + distance.toString() + 'px)')
+            .css('margin-left', '0');
+    });
+};
+
+function getPosx(selector) {
     var posx = $(selector).css('transform');
     if (posx == 'none')
         posx = 0;
     else
         posx = Number(posx.split(/[()]/)[1].split(',')[4]);
-    console.log(posx);
-    $.keyframe.define([{
-        name: 'scroll-collection',
-        '0%': {
-            'transform': 'translateX(' + posx.toString() + 'px)'
-        },
-        '100%': {
-            'transform': 'translateX(' + distance.toString() + 'px)'
-        }
-    }]);
-    $(selector).playKeyframe({
-        name: 'scroll-collection', // name of the keyframe you want to bind to the selected element
-        duration: '1s', // [optional, default: 0, in ms] how long you want it to last in milliseconds
-        fillMode: 'forwards', //[optional, default: 'forward']  how to apply the styles outside the animation time, default value is forwards
-        complete: function() {} //[optional] Function fired after the animation is complete. If repeat is infinite, the function will be fired every time the animation is restarted.
-    });
+    return posx;
 };
