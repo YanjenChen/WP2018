@@ -16,7 +16,8 @@ header, body, footer {
   padding: 0; }
 
 .block {
-  flex: 1; }
+  flex: 1;
+  position: relative; }
 
 .size-1 {
   flex: 1%;

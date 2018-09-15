@@ -1,3 +1,54 @@
+body {
+  font-size: 2rem;
+  font-family: 'Noto Sans', sans-serif; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: 'Oswald', sans-serif; }
+  body h1 {
+    font-size: 5rem; }
+  body h2 {
+    font-size: 4rem; }
+  body h3 {
+    font-size: 3rem; }
+  body h4 {
+    font-size: 2.75rem; }
+  body h5 {
+    font-size: 2.5rem; }
+  body h6 {
+    font-size: 2.25rem; }
+
+span {
+  color: #ff9f1c; }
+
+header, section {
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #011627;
+  color: #fdfffc; }
+
+header .yanjen {
+  fill: #F71735;
+  stroke: #F71735;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1200 1000;
+  stroke-width: 0; }
+
+header .chen {
+  fill: #41EAD4;
+  stroke: #41EAD4;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1200 1000;
+  stroke-width: 0; }
+
+header #logo path {
+  animation: logo 5s linear 1; }
+
+header h1 {
+  font-size: 2.5rem;
+  font-family: 'Caveat', cursive; }
+
 @keyframes logo {
   0% {
     stroke-width: 1pt;
@@ -10,28 +61,70 @@
     fill-opacity: 1;
     stroke-width: 0pt; } }
 
-span {
-  color: #ff9f1c; }
+.skills-wrapper .chart {
+  position: relative;
+  margin: 0; }
+  .skills-wrapper .chart img {
+    position: absolute;
+    max-width: 100px;
+    max-height: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  .skills-wrapper .chart .html5 + svg .outer {
+    stroke: #FC490B; }
+  .skills-wrapper .chart .css3 + svg .outer {
+    stroke: #2196F3; }
+  .skills-wrapper .chart .javascript + svg .outer {
+    stroke: #E4BA42; }
+  .skills-wrapper .chart .php + svg .outer {
+    stroke: #8F9ED1; }
+  .skills-wrapper .chart .shadow {
+    fill: #fdfffc;
+    stroke: lightgrey;
+    stroke-width: 15; }
+  .skills-wrapper .chart .outer {
+    fill: transparent;
+    stroke-width: 15;
+    stroke-dasharray: 565.2;
+    transition: stroke-dashoffset 1s;
+    animation-play-state: running; }
+  .skills-wrapper .chart:hover .outer {
+    stroke-dashoffset: 565.2 !important;
+    animation-play-state: paused; }
+  .skills-wrapper .chart[data-percent='100'] .outer {
+    stroke-dashoffset: 0;
+    animation: show100 2s; }
+  .skills-wrapper .chart[data-percent='75'] .outer {
+    stroke-dashoffset: 141.3;
+    animation: show75 2s; }
+  .skills-wrapper .chart[data-percent='50'] .outer {
+    stroke-dashoffset: 282.6;
+    animation: show50 2s; }
+  .skills-wrapper .chart[data-percent='25'] .outer {
+    stroke-dashoffset: 423.9;
+    animation: show25 2s; }
 
-header {
-  height: 100vh;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #011627;
-  color: #fdfffc; }
-  header .yanjen {
-    fill: #F71735;
-    stroke: #F71735;
-    stroke-miterlimit: 10;
-    stroke-dasharray: 1200 1000;
-    stroke-width: 0; }
-  header .chen {
-    fill: #41EAD4;
-    stroke: #41EAD4;
-    stroke-miterlimit: 10;
-    stroke-dasharray: 1200 1000;
-    stroke-width: 0; }
-  header #logo path {
-    animation: logo 5s linear 1; }
+@keyframes show100 {
+  0% {
+    stroke-dashoffset: 565.2; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@keyframes show75 {
+  0% {
+    stroke-dashoffset: 565.2; }
+  100% {
+    stroke-dashoffset: 141.3; } }
+
+@keyframes show50 {
+  0% {
+    stroke-dashoffset: 565.2; }
+  100% {
+    stroke-dashoffset: 282.6; } }
+
+@keyframes show25 {
+  0% {
+    stroke-dashoffset: 565.2; }
+  100% {
+    stroke-dashoffset: 423.9; } }
