@@ -1,9 +1,37 @@
+@keyframes logo {
+  0% {
+    stroke-width: 1pt;
+    stroke-dashoffset: 1200;
+    fill-opacity: 0; }
+  50% {
+    fill-opacity: 0; }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+    stroke-width: 0pt; } }
+
+span {
+  color: #ff9f1c; }
+
 header {
-  max-height: 1vh;
+  height: 100vh;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: white;
-  font-family: 'Permanent Marker', cursive; }
+  background-color: #011627;
+  color: #fdfffc; }
+  header .yanjen {
+    fill: #F71735;
+    stroke: #F71735;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1200 1000;
+    stroke-width: 0; }
+  header .chen {
+    fill: #41EAD4;
+    stroke: #41EAD4;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1200 1000;
+    stroke-width: 0; }
+  header #logo path {
+    animation: logo 5s linear 1; }

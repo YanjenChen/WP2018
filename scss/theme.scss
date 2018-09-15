@@ -1,10 +1,37 @@
+$maastricht-blue: #011627;
+$tractor-red: #f71735;
+$turquoise: #41ead4;
+$baby-powder: #fdfffc;
+$crayola: #ff9f1c;
+
+@keyframes logo {
+    0% {
+        stroke-width: 1pt;
+        stroke-dashoffset: 1200;
+        fill-opacity: 0;
+    }
+    50% {
+        fill-opacity: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+        stroke-width: 0pt;
+    }
+}
+span {color: $crayola}
 header {
-    max-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
-    font-family: 'Permanent Marker', cursive;
+    background-color: $maastricht-blue;
+    color: $baby-powder;
+
+    .yanjen{fill:#F71735;stroke:#F71735;stroke-miterlimit:10;stroke-dasharray:1200 1000;stroke-width:0;}
+    .chen{fill:#41EAD4;stroke:#41EAD4;stroke-miterlimit:10;stroke-dasharray:1200 1000;stroke-width:0;}
+    #logo path {
+        animation: logo 5s linear 1;
+    }
 }
