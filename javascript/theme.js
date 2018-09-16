@@ -13,17 +13,21 @@ $(function() {
         var target_position = $(this).attr('item-id');
         var current_position = slider.find('.activated').attr('item-id');
         slider.find('.activated').toggleClass('activated');
-        // Swap to real item position
+        $('.interest-list .activated').toggleClass('activated');
+
         switch (target_position) {
+            // Swap to real item position
             case 'c1':
             case 'c2':
             case 'c' + second_last.attr('item-id'):
             case 'c' + last.attr('item-id'):
                 slider.css('transform', 'translateX(' + getSlideDistance(slider, slider.find("[item-id='c" + current_position + "']")).toString() + 'px)');
+                $('.interest-list li:nth-child(' + target_position.replace('c', '') + ')').toggleClass('activated');
                 animateSlider(slider, getSlideDistance(slider, slider.find("[item-id='" + target_position.replace('c', '') + "']")));
                 slider.find("[item-id='" + target_position.replace('c', '') + "']").toggleClass('activated');
                 break;
             default:
+                $('.interest-list li:nth-child(' + target_position + ')').toggleClass('activated');
                 animateSlider(slider, getSlideDistance(slider, $(this)));
                 $(this).toggleClass('activated');
         }
@@ -52,6 +56,7 @@ function initSlider(selector) {
     // Center first item to middle of mask
     var distance = getSlideDistance(collection, first);
     first.toggleClass('activated');
+    $('.interest-list li:first').toggleClass('activated');
     animateSlider(collection, distance);
 
     return {

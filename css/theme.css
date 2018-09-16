@@ -137,6 +137,19 @@ header h1 {
   100% {
     stroke-dashoffset: 423.9; } }
 
+.interest-wrapper .interest-list {
+  display: inline-block;
+  list-style: none;
+  margin: 0; }
+  .interest-wrapper .interest-list li {
+    display: none;
+    opacity: 0;
+    transition: 1s; }
+  .interest-wrapper .interest-list .activated {
+    display: block;
+    opacity: 1;
+    transition: 1s; }
+
 .interest-wrapper .interest-collection-wrapper {
   overflow: hidden;
   border: 10px solid #fdfffc; }
@@ -148,4 +161,11 @@ header h1 {
     display: inline-block;
     max-width: 100px;
     max-height: 100px;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    opacity: 0.4;
+    transition: opacity 1s; }
+  .interest-wrapper .interest-collection .activated {
+    opacity: 1.0;
+    transition: opacity 1s; }
