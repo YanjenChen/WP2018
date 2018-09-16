@@ -7,6 +7,7 @@ $crayola: #ff9f1c;
 body {
     font-size: 2rem;
     font-family: 'Noto Sans', sans-serif;
+    background-color: $maastricht-blue;
 
     h1, h2, h3, h4, h5, h6 {font-family: 'Oswald', sans-serif;}
     h1 {font-size: 5rem;}
@@ -23,7 +24,6 @@ header, section {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    background-color: $maastricht-blue;
     color: $baby-powder;
 }
 header {

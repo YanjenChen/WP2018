@@ -1,6 +1,7 @@
 body {
   font-size: 2rem;
-  font-family: 'Noto Sans', sans-serif; }
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #011627; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     font-family: 'Oswald', sans-serif; }
   body h1 {
@@ -25,7 +26,6 @@ header, section {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  background-color: #011627;
   color: #fdfffc; }
 
 header .yanjen {
