@@ -32,6 +32,9 @@ $(window).bind("load", function() {
                 $(this).toggleClass('activated');
         }
     });
+
+    // Load background particles
+    particlesJS.load('particles-js', 'particles.json');
 });
 
 function initSlider(selector) {

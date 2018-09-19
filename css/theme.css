@@ -20,8 +20,33 @@ body {
 span {
   color: #ff9f1c; }
 
+nav {
+  height: 10vh;
+  padding: 0 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fdfffc;
+  font-size: 1.2rem; }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none; }
+    nav ul li {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      cursor: pointer; }
+    nav ul .seperator {
+      margin: 0 0.5rem;
+      cursor: default; }
+
+footer {
+  height: 5vh; }
+
 header, section {
-  height: 100vh;
+  height: 85vh;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -50,8 +75,7 @@ header #logo path {
 header #logo:hover path {
   stroke-width: 1pt;
   stroke-dashoffset: 0;
-  fill-opacity: 0;
-  animation-play-state: paused; }
+  fill-opacity: 0; }
 
 header h1 {
   font-size: 2.5rem;

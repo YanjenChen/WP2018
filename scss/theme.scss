@@ -18,8 +18,38 @@ body {
     h6 {font-size: 2.25rem;}
 }
 span {color: $crayola}
+nav {
+    height: 10vh;
+    padding: 0 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    color: $baby-powder;
+    font-size: 1.2rem;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+
+        li {
+            display: inline-block;
+            font-family: 'Oswald', sans-serif;
+            cursor: pointer;
+        }
+        .seperator {
+            margin: 0 0.5rem;
+            cursor: default;
+        }
+    }
+}
+footer {
+    height: 5vh;
+}
 header, section {
-    height: 100vh;
+    height: 85vh;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -39,7 +69,7 @@ header {
             stroke-width: 1pt;
             stroke-dashoffset: 0;
             fill-opacity: 0;
-            animation-play-state: paused;
+            //animation-play-state: paused;
         }
     }
     h1 {
