@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="resume_favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Caveat|Oswald|Noto+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script-->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="javascript/theme.js"></script>
 </head>
@@ -25,7 +26,21 @@
         </ul>
     </nav>
     <header>
-        <div class="container">
+        <div class="scroll-indicator-left-wrapper">
+            <div class="scroll-indicator-left">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="scroll-indicator-right-wrapper">
+            <div class="scroll-indicator-right">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="container landing-wrapper activated" container-id="1">
             <div class="grid">
                 <div class="block size-100 text-center">
                     <div class="logo-wrapper">
@@ -54,9 +69,7 @@
                 </div>
             </div>
         </div>
-    </header>
-    <section class="skills-wrapper">
-        <div class="container">
+        <div class="container skills-wrapper" container-id="2">
             <div class="grid text-center">
                 <div class="block size-100">
                     <h1>HERES WHAT I CAN DO</h1>
@@ -99,9 +112,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="interest-wrapper">
-        <div class="container">
+        <div class="container interest-wrapper" container-id="3">
             <div class="grid">
                 <div class="block size-100 text-center">
                     <h1>
@@ -131,7 +142,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
+
     <footer>
     </footer>
 </body>
