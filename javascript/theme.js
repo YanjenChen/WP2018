@@ -57,7 +57,8 @@ function initSlider(selector) {
         res();
     }).then(() => {
         // Center first item to middle of mask
-        var distance = getSlideDistance(collection, first);
+        //var distance = getSlideDistance(collection, first);
+        var distance = getSlideDistance(collection, collection.find('.collection-items:nth-child(4)')); // bug fix after loading.
         first.toggleClass('activated');
         $('.interest-list li:first').toggleClass('activated');
         animateSlider(collection, distance);
