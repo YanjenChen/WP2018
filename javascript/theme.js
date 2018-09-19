@@ -75,6 +75,9 @@ function initSlider(selector) {
 };
 
 function getSlideDistance(slider, item) {
+    console.log('container width: ' + slider.width().toString());
+    console.log('first element position: ' + item.position().left.toString());
+    console.log('moving distance:' + ((slider.width() - 2 * item.position().left - item.outerWidth(true)) / 2).toString());
     return (slider.width() - 2 * item.position().left - item.outerWidth(true)) / 2;
 };
 
