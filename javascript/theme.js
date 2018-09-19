@@ -1,4 +1,4 @@
-$(function() {
+$(window).load(function() {
     var slider = $('.interest-collection');
     var positions = initSlider(slider),
         lenth = positions.lenth,
@@ -57,8 +57,7 @@ function initSlider(selector) {
         res();
     }).then(() => {
         // Center first item to middle of mask
-        //var distance = getSlideDistance(collection, first);
-        var distance = getSlideDistance(collection, $('.interest-collection .collection-items:nth-child(4)')); // bug fix after loading.
+        var distance = getSlideDistance(collection, first);
         first.toggleClass('activated');
         $('.interest-list li:first').toggleClass('activated');
         animateSlider(collection, distance);
@@ -76,9 +75,6 @@ function initSlider(selector) {
 };
 
 function getSlideDistance(slider, item) {
-    console.log('container width: ' + slider.width().toString());
-    console.log('first element position: ' + item.position().left.toString());
-    console.log('moving distance:' + ((slider.width() - 2 * item.position().left - item.outerWidth(true)) / 2).toString());
     return (slider.width() - 2 * item.position().left - item.outerWidth(true)) / 2;
 };
 
