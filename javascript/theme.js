@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(window).bind("load", function() {
     var slider = $('.interest-collection');
     var positions = initSlider(slider),
         lenth = positions.lenth,
