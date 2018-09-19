@@ -45,19 +45,23 @@ function initSlider(selector) {
         second_last = items.filter(':nth-child(' + (lenth - 1).toString() + ')'),
         last = items.filter(':last');
 
-    // Copy last 3 items to the front
-    third_last.clone().attr('item-id', 'c' + third_last.attr('item-id')).insertBefore(first);
-    second_last.clone().attr('item-id', 'c' + second_last.attr('item-id')).insertBefore(first);
-    last.clone().attr('item-id', 'c' + last.attr('item-id')).insertBefore(first);
-    // Copy first 3 items to the end
-    third.clone().attr('item-id', 'c' + third.attr('item-id')).insertAfter(last);
-    second.clone().attr('item-id', 'c' + second.attr('item-id')).insertAfter(last);
-    first.clone().attr('item-id', 'c' + first.attr('item-id')).insertAfter(last);
-    // Center first item to middle of mask
-    var distance = getSlideDistance(collection, first);
-    first.toggleClass('activated');
-    $('.interest-list li:first').toggleClass('activated');
-    animateSlider(collection, distance);
+    new Promise((res, rej) => {
+        // Copy last 3 items to the front
+        third_last.clone().attr('item-id', 'c' + third_last.attr('item-id')).insertBefore(first);
+        second_last.clone().attr('item-id', 'c' + second_last.attr('item-id')).insertBefore(first);
+        last.clone().attr('item-id', 'c' + last.attr('item-id')).insertBefore(first);
+        // Copy first 3 items to the end
+        third.clone().attr('item-id', 'c' + third.attr('item-id')).insertAfter(last);
+        second.clone().attr('item-id', 'c' + second.attr('item-id')).insertAfter(last);
+        first.clone().attr('item-id', 'c' + first.attr('item-id')).insertAfter(last);
+        res();
+    }).then(() => {
+        // Center first item to middle of mask
+        var distance = getSlideDistance(collection, first);
+        first.toggleClass('activated');
+        $('.interest-list li:first').toggleClass('activated');
+        animateSlider(collection, distance);
+    });
 
     return {
         lenth: lenth,
