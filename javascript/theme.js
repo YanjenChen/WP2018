@@ -34,7 +34,7 @@ $(window).bind("load", function() {
     });
 
     // Load background particles
-    particlesJS.load('particles-js', 'particles.json');
+    particlesJS.load('particles-js', 'javascript/particles.json');
 });
 
 function initSlider(selector) {
