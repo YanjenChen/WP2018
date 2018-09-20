@@ -306,3 +306,7 @@ header {
       header .interest-wrapper .interest-collection .activated {
         opacity: 1.0;
         transition: opacity 1s; }
+
+#about .core-wrapper svg {
+  width: 450px;
+  height: 450px; }
