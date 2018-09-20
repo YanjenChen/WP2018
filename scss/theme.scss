@@ -352,4 +352,10 @@ header {
             }
         }
     }
+    .grid {
+        align-items: center;
+
+        h1 {margin-top: 0;}
+        p {font-size: 1.2rem;}
+    }
 }

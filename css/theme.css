@@ -332,3 +332,10 @@ header {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+#about .grid {
+  align-items: center; }
+  #about .grid h1 {
+    margin-top: 0; }
+  #about .grid p {
+    font-size: 1.2rem; }

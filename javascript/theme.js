@@ -91,7 +91,7 @@ $(window).bind("load", function() {
     });
 
     // Load background particles.
-    //particlesJS.load('particles-js', 'javascript/particles.json');
+    particlesJS.load('particles-js', 'javascript/particles.json');
 });
 
 /* The following are interest slider supporting function */
