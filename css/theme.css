@@ -312,13 +312,13 @@ header {
   height: 450px; }
   #about .core-wrapper svg #orbit {
     transform-origin: center;
-    animation: counterclockwise-rotation 6s linear 0s infinite; }
+    animation: counterclockwise-rotation 15s linear 0s infinite; }
   #about .core-wrapper svg #time {
     transform-origin: center;
-    animation: clockwise-rotation 10s linear 0s infinite; }
-  #about .core-wrapper svg #orbit {
+    animation: clockwise-rotation 12s linear 0s infinite; }
+  #about .core-wrapper svg #star {
     transform-origin: center;
-    animation: counterclockwise-rotation 4s linear 0s infinite; }
+    animation: counterclockwise-rotation 6s linear 0s infinite; }
 
 @keyframes counterclockwise-rotation {
   0% {
