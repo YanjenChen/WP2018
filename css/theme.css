@@ -63,6 +63,9 @@ header, section {
   align-items: center;
   color: #fdfffc; }
 
+.hidden {
+  display: none; }
+
 header {
   -webkit-user-select: none; }
   header > .activated {
