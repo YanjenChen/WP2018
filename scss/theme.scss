@@ -329,6 +329,27 @@ header {
         svg {
             width: 450px;
             height: 450px;
+
+            #orbit {
+                transform-origin: center;
+                animation: counterclockwise-rotation 6s linear 0s infinite;
+            }
+            #time {
+                transform-origin: center;
+                animation: clockwise-rotation 10s linear 0s infinite;
+            }
+            #orbit {
+                transform-origin: center;
+                animation: counterclockwise-rotation 4s linear 0s infinite;
+            }
+            @keyframes counterclockwise-rotation {
+                0% {transform: rotate(0deg);}
+                100% {transform: rotate(-360deg);}
+            }
+            @keyframes clockwise-rotation {
+                0% {transform: rotate(0deg);}
+                100% {transform: rotate(-360deg);}
+            }
         }
     }
 }

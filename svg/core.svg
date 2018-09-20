@@ -134,22 +134,22 @@
 	<g>
 		<circle class="st5" cx="400" cy="50" r="40"/>
 		<polygon class="st2" points="400,20 404.2,45.8 430,50 404.2,54.2 400,80 395.8,54.2 370,50 395.8,45.8 		"/>
-		<animateTransform dur="2s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,400,50" to="360,400,50"/>
+		<animateTransform dur="6s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,400,50" to="360,400,50"/>
 	</g>
 	<g>
 		<circle class="st5" cx="50" cy="401" r="40"/>
 		<polygon class="st2" points="50,371 54.2,396.8 80,401 54.2,405.2 50,431 45.8,405.2 20,401 45.8,396.8 		"/>
-		<animateTransform dur="2s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,50,401" to="360,50,401"/>
+		<animateTransform dur="6s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,50,401" to="360,50,401"/>
 	</g>
 	<g>
 		<circle class="st5" cx="401" cy="750" r="40"/>
 		<polygon class="st2" points="401,720 405.2,745.8 431,750 405.2,754.2 401,780 396.8,754.2 371,750 396.8,745.8 		"/>
-		<animateTransform dur="2s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,401,750" to="360,401,750"/>
+		<animateTransform dur="6s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,401,750" to="360,401,750"/>
 	</g>
 	<g>
 		<circle class="st5" cx="750" cy="400" r="40"/>
 		<polygon class="st2" points="750,370 754.2,395.8 780,400 754.2,404.2 750,430 745.8,404.2 720,400 745.8,395.8 		"/>
-		<animateTransform dur="2s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,750,400" to="360,750,400"/>
+		<animateTransform dur="6s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,750,400" to="360,750,400"/>
 	</g>
 </g>
 </svg>
