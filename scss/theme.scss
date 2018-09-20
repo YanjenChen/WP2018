@@ -326,6 +326,9 @@ header {
 }
 #about {
     .core-wrapper {
+        display: flex;
+        align-items: center;
+        
         svg {
             width: 450px;
             height: 450px;
