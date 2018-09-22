@@ -342,3 +342,15 @@ header {
     margin-top: 0; }
   #about .grid p {
     font-size: 1.2rem; }
+
+#works {
+  justify-content: flex-start; }
+  #works h1, #works h2, #works h3, #works h4, #works h5, #works h6 {
+    margin: 2rem 0; }
+  #works p {
+    font-size: 1rem; }
+  #works a {
+    color: #41ead4;
+    transition: 0.4s; }
+    #works a:hover {
+      color: #83d238; }
