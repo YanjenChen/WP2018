@@ -345,7 +345,7 @@ header {
 
 #works {
   justify-content: flex-start;
-  font-size: 1rem; }
+  font-size: 1.2rem; }
   #works h1, #works h2, #works h3, #works h4, #works h5, #works h6 {
     margin: 2rem 0; }
   #works a {
