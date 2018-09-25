@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat|Oswald|Noto+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="javascript/theme.js"></script>
 </head>
 
@@ -24,7 +25,7 @@
             <li section-name="works"><a>WORKS</a></li>
         </ul>
     </nav>
-    <header id="home" class="activated">
+    <header id="home" class="activated" data-aos="zoom-in">
         <div class="scroll-indicator-left-wrapper">
             <div class="scroll-indicator-left">
                 <span></span>
@@ -143,7 +144,7 @@
         </div>
     </header>
 
-    <section id="about" class="hidden">
+    <section id="about" class="hidden" data-aos="zoom-in">
         <div class="container">
             <div class="grid">
                 <div class="block size-50">
@@ -158,7 +159,7 @@
         </div>
     </section>
 
-    <section id="works" class="hidden">
+    <section id="works" class="hidden" data-aos="zoom-in">
         <div class="container">
             <div class="grid">
                 <div class="block size-100">
@@ -168,19 +169,16 @@
                     <div>
                         <h6>Augmented Reality Tower Defense</h6>
                         <p>
-                            This idea is inspired from <a href="https://experiments.withgoogle.com/paper-cubes">Paper Cubes</a>, a goolge experiment.
-                            The author uses cubes as marker to control stick figures' behavior in AR enviroment. I think Paper Cubes is a great idea,
-                            it's fun to use hand-making component to interact with AR, and it have the potential to extend to more application
-                            (that's why i want to propose this idea). The author use Unity and Vuforia to make this project, but I think it MAYBE can
-                            use web-AR to achieve similar result.
+                            This idea is inspired from <a href="https://experiments.withgoogle.com/paper-cubes">Paper Cubes</a>, a goolge experiment. The author uses cubes as marker to control stick figures' behavior in AR enviroment. I think Paper Cubes
+                            is a great idea, it's fun to use hand-making component to interact with AR, and it have the potential to extend to more application (that's why i want to propose this idea). The author use Unity and Vuforia to make this project,
+                            but I think it MAYBE can use web-AR to achieve similar result.
                         </p>
                         <p>
                             <span>Tech, library or framework may help achieve this idea</span><br>
                             <ul>
                                 <li><a href="https://developers.google.com/web/updates/2018/05/welcome-to-immersive">WebXR.</a> Under development google immersive web API.</li>
                                 <li><a href="https://developers.google.com/web/updates/2018/06/ar-for-the-web">WebAR.</a> A new API under WebXR.</li>
-                                <li><a href="https://github.com/jeromeetienne/AR.js">AR.js - Augmented Reality for the Web.</a> Marker based JS AR library
-                                (but seems like marker base system can not use code to control object's coordinate...).</li>
+                                <li><a href="https://github.com/jeromeetienne/AR.js">AR.js - Augmented Reality for the Web.</a> Marker based JS AR library (but seems like marker base system can not use code to control object's coordinate...).</li>
                                 <li><a href="https://medium.com/arjs/how-to-create-your-own-marker-44becbec1105">Create your Own Marker.</a> It's possible to use customized marker in AR.js.</li>
                                 <li><a href="https://aframe.io/">A-Frame.</a> An entity component system(ECS) framework for Three.js, can intergrate with AR.js.</li>
                             </ul>
