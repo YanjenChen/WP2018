@@ -9,6 +9,8 @@ body {
     font-family: 'Noto Sans', sans-serif;
     background-color: $maastricht-blue;
 
+    &::-webkit-scrollbar {display:none}
+
     h1, h2, h3, h4, h5, h6 {font-family: 'Oswald', sans-serif;}
     h1 {font-size: 5rem;}
     h2 {font-size: 4rem;}
@@ -65,6 +67,7 @@ header, section {
 }
 .hidden {display: none;}
 body > .activated {
+    transform: translateY(0);
     animation: fade-in-up 1s ease 0s 1;
 
     @keyframes fade-in-up {
@@ -74,7 +77,7 @@ body > .activated {
         }
         100% {
             opacity: 1;
-            transform: inherit;
+            transform: translateY(0);
         }
     }
 }
@@ -102,7 +105,7 @@ header {
     }
     .scroll-indicator-left-wrapper {
         position: absolute;
-        top: 10vh;
+        //top: 10vh;
         left: 0;
         height: 85vh;
         width: 10vw;
@@ -145,7 +148,7 @@ header {
     }
     .scroll-indicator-right-wrapper {
         position: absolute;
-        top: 10vh;
+        //top: 10vh;
         right: 0;
         height: 85vh;
         width: 10vw;

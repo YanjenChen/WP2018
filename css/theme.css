@@ -2,6 +2,8 @@ body {
   font-size: 2rem;
   font-family: 'Noto Sans', sans-serif;
   background-color: #011627; }
+  body::-webkit-scrollbar {
+    display: none; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     font-family: 'Oswald', sans-serif; }
   body h1 {
@@ -67,6 +69,7 @@ header, section {
   display: none; }
 
 body > .activated {
+  transform: translateY(0);
   animation: fade-in-up 1s ease 0s 1; }
 
 @keyframes fade-in-up {
@@ -75,7 +78,7 @@ body > .activated {
     transform: translateY(15%); }
   100% {
     opacity: 1;
-    transform: inherit; } }
+    transform: translateY(0); } }
 
 header {
   -webkit-user-select: none; }
@@ -101,7 +104,6 @@ header {
     transform: rotate(0deg); } }
   header .scroll-indicator-left-wrapper {
     position: absolute;
-    top: 10vh;
     left: 0;
     height: 85vh;
     width: 10vw; }
@@ -139,7 +141,6 @@ header {
     transform: rotate(45deg) translate(-30px, 30px); } }
   header .scroll-indicator-right-wrapper {
     position: absolute;
-    top: 10vh;
     right: 0;
     height: 85vh;
     width: 10vw; }
