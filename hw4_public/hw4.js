@@ -9,7 +9,7 @@ $(document).ready(function() {
             method: "get",
             url: "./list",
             success: function(data) {
-                $("#result").text(data);
+                $("#result").text(JSON.parse(data));
             }
         });
     });
