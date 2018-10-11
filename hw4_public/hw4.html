@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Homework4</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+</head>
+
+<body>
+    <div class="ui placeholder segment container">
+        <div class="ui center aligned grid">
+            <div class="middle aligned row">
+                <div class="column">
+                    <h1 class="ui violet header">WP2018 Homework 4</h1>
+                    <h2 class="ui teal header">Ajax and framework, created using semantic ui.</h2>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui segment" style="margin: 1rem;">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui center aligned grid">
+                            <div class="middle aligned row">
+                                <div class="column" id="list">
+                                    <h3>List all students</h3>
+                                    <button class="ui button">Toggle me</button>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+                            <div class="middle aligned row">
+                                <div class="column" id="search">
+                                    <h3>Search student</h3>
+                                    <div class="ui input">
+                                        <input type="text" name="id" placeholder="ex.E24046072">
+                                    </div>
+                                    <button class="ui button">Search</button>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+                            <div class="middle aligned row">
+                                <div class="column" id="add">
+                                    <h3>Add student</h3>
+                                    <div class="ui input">
+                                        <input type="text" name="id" placeholder="ex.E24046072">
+                                    </div>
+                                    <div class="ui input">
+                                        <input type="text" name="name" placeholder="ex.John">
+                                    </div>
+                                    <button class="ui button">Add</button>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+                            <div class="middle aligned row">
+                                <div class="column" id="delete">
+                                    <h3>Delete student</h3>
+                                    <div class="ui input">
+                                        <input type="text" name="id" placeholder="ex.E24046072">
+                                    </div>
+                                    <button class="ui button">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center aligned column" style="overflow: hidden;">
+                        <h3>Result</h3>
+                        <div class="ui divider"></div>
+                        <div id="result">
+                        </div>
+                    </div>
+                </div>
+                <div class="ui vertical divider">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="hw4.js"></script>
+</body>
+
+</html>
