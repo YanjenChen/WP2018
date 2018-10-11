@@ -1,10 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
 const port = 11453;
 
 app.listen(port);
-app.use(express.static(__dirname + 'hw4_public'));
+app.use(express.static(__dirname + '/hw4_public'));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 
 app.get('/list', function(req, res) {
     res.send(fs.readFileSync('students.json'));
@@ -13,10 +17,10 @@ app.get('/list', function(req, res) {
 app.post('/search', function(req, res) {
     var students = JSON.parse(fs.readFileSync('students.json'));
     var found = Object.keys(students).find((element) => {
-        element == req.id;
+        return element == req.body.id;
     });
     if (typeof(found) !== 'undefined' && found) {
-        res.send(students[req.id]);
+        res.send(students[req.body.id]);
     } else {
         res.send('Not found.');
     }
@@ -25,26 +29,30 @@ app.post('/search', function(req, res) {
 app.post('/add', function(req, res) {
     var students = JSON.parse(fs.readFileSync('students.json'));
     var found = Object.keys(students).find((element) => {
-        element == req.id;
+        return element == req.body.id;
     });
     if (typeof(found) !== 'undefined' && found) {
         res.send('ID already exist!');
     } else {
-        students[req.id] = req.name;
-        fs.writeFile('students.json', JSON.stringify(students));
-        res.send('Add id ' + req.id + ' to database.');
+        students[req.body.id] = req.body.name;
+        fs.writeFile('students.json', JSON.stringify(students), (err)=>{
+            if(err){throw err;}
+        });
+        res.send('Add id ' + req.body.id + ' to database.');
     }
 });
 
 app.post('/delete', function(req, res) {
     var students = JSON.parse(fs.readFileSync('students.json'));
     var found = Object.keys(students).find((element) => {
-        element == req.id;
+        return element == req.body.id;
     });
     if (typeof(found) !== 'undefined' && found) {
-        delete students[req.id];
-        fs.writeFile('students.json', JSON.stringify(students));
-        res.send('Delete id ' + req.id + ' from database.');
+        delete students[req.body.id];
+        fs.writeFile('students.json', JSON.stringify(students), (err)=>{
+            if(err){throw err;}
+        });
+        res.send('Delete id ' + req.body.id + ' from database.');
     } else {
         res.send('ID does not exist!');
     }
