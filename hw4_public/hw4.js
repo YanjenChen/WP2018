@@ -9,7 +9,14 @@ $(document).ready(function() {
             method: "get",
             url: "./list",
             success: function(data) {
-                $("#result").text(JSON.parse(data));
+                data = JSON.parse(data);
+                var html = "<table class='ui celled table'><thread><tr><th>Id</th><th>Name</th></tr></thread><tbody>"
+                $.each(data, function(key, value) {
+                    html += "<tr><td data-label='Id'>" + key + "</td>";
+                    html += "<td data-label='Name'>" + value + "</td></tr>"
+                });
+                html += "</tbody></table>"
+                $("#result").html(html);
             }
         });
     });
@@ -23,7 +30,7 @@ $(document).ready(function() {
                 id: id_val
             },
             success: function(data) {
-                $("#result").text(data);
+                $("#result").html('<p>' + data + '</p>');
             }
         });
     });
@@ -39,7 +46,7 @@ $(document).ready(function() {
                 name: name_val
             },
             success: function(data) {
-                $("#result").text(data);
+                $("#result").html('<p>' + data + '</p>');
             }
         });
     });
@@ -53,7 +60,7 @@ $(document).ready(function() {
                 id: id_val
             },
             success: function(data) {
-                $("#result").text(data);
+                $("#result").html('<p>' + data + '</p>');
             }
         });
     });
